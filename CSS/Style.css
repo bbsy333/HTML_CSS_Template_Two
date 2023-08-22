@@ -214,6 +214,7 @@ header .Container::after {
     background-color: beige;
     background-image: url("../Images/Landing.jpg");
     background-size: cover;
+    position: relative;
 }
 
 .overlay {
