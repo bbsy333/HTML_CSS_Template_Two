@@ -210,7 +210,7 @@ header .Container::after {
 /* End Header  */
 /* Start Landing  */
 .landing {
-    min-height: 100vh;
+    min-height: 100vb;
     background-color: beige;
     background-image: url("../Images/Landing.jpg");
     background-size: cover;
