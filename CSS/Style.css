@@ -455,9 +455,10 @@ header .Container::after {
 .portfolio .shuffle {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     text-transform: uppercase;
     margin: 100px auto 30px;
+    max-width: 600px;
 }
 
 .portfolio .shuffle li {
@@ -466,8 +467,14 @@ header .Container::after {
 }
 
 @media(max-width: 767px) {
+    .portfolio .shuffle {
+        max-width: 400px;
+        justify-content: center;
+    }
+
     .portfolio .shuffle li {
         padding: 8px;
+        font-size: 15px;
     }
 }
 
@@ -916,9 +923,10 @@ header .Container::after {
 .pricing .Container .plans .plan {
     text-align: center;
     background-color: #fcfcfc;
+    box-shadow: 0 2px 9px -4px black;
 }
 
-.pricing .Container .plans .plan .header {
+.pricing .Container .plans .plan .plan-header {
     border-bottom: 1px solid var(--main-color);
     border-top: 1px solid var(--main-color);
     padding: 30px 20px;
@@ -975,7 +983,7 @@ header .Container::after {
     left: 50%;
 }
 
-.pricing .Container .plans .plan .footer a {
+.pricing .Container .plans .plan .plan-footer a {
     display: block;
     font-size: 15px;
     text-decoration: none;
@@ -1109,28 +1117,182 @@ header .Container::after {
 }
 
 .contact .Container .contact-holder form {
-    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 590px;
+}
+
+@media(max-width: 991px) {
+    .contact .Container .contact-holder form {
+        width: 100%;
+    }
+
+    .contact .Container .contact-holder {
+        justify-content: center;
+    }
 }
 
 .contact .Container .contact-holder form input:not(:last-child) {
     display: block;
     width: 100%;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid var(--paragraph-color);
+    margin-bottom: 22px;
+    padding: 15px 20px;
+    border: 1px solid #dedadc;
 }
 
 .contact .Container .contact-holder form textarea {
     display: block;
     width: 100%;
+    height: 200px;
+    padding: 15px 20px;
+    resize: none;
+    border: 1px solid #dedadc;
 }
 
-.contact .Container .contact-holder form input:not(:last-child)::placeholder {
+.contact .Container .contact-holder form input::placeholder,
+.Container .contact-holder form textarea::placeholder {
     color: black;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.contact .Container .contact-holder form input:focus,
+.Container .contact-holder form textarea:focus {
+    outline: none;
+}
+
+.Container .contact-holder input[type="submit"] {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: white;
+    background-color: var(--main-color);
+    padding: 15px 40px;
+    margin-top: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+@media(max-width: 991px) {
+    .Container .contact-holder input[type="submit"] {
+        margin-top: 50px;
+        width: 100%;
+    }
 }
 
 .contact .Container .contact-holder .text {
-    flex: 1;
+    padding: 0 30px;
+}
+
+@media(max-width: 991px) {
+    .contact .Container .contact-holder .text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 400px;
+        margin-bottom: 20px;
+        order: -1;
+    }
+}
+
+.contact .Container .contact-holder .text .sec1 {
+    margin-bottom: 60px;
+}
+
+.contact .Container .contact-holder .text p:nth-child(1) {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.contact .Container .contact-holder .text P:not(:first-child) {
+    color: var(--paragraph-color);
+    line-height: 2;
+    font-size: 12px;
 }
 
 /* End Contact */
+/* Start Footer */
+.footer {
+    padding-top: calc(var(--section-padding) / 2);
+    padding-bottom: calc(var(--section-padding) / 2);
+    background-image: url(../Images/Footer.jpg);
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(0, 0, 0, 70%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.footer .Container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.footer .Container img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.footer .Container P:first-of-type {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.footer .Container P:first-of-type:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: white;
+    bottom: 0;
+    left: -20px;
+}
+
+.footer .Container .social-icons {
+    display: flex;
+    margin: 20px auto 60px;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.footer .Container .social-icons a {
+    color: white;
+}
+
+.footer .Container .social-icons i {
+    font-size: 15px;
+}
+
+.footer .Container P:last-of-type {
+    font-size: 13px;
+}
+
+.footer .Container P:last-of-type span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/* End Footer */
+
+/* MADE BY MOHAMED ABBAS */
+/* MADE BY MOHAMED ABBAS */
+/* MADE BY MOHAMED ABBAS */
+/* MADE BY MOHAMED ABBAS */
+/* MADE BY MOHAMED ABBAS */
